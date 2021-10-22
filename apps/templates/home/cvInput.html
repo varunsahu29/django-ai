@@ -1,0 +1,46 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page User {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+          <div class="row justify-content-md-center">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Upload CSV </h4>
+                  <p class="card-category">file below </p>
+                </div>
+                <div class="card-body">
+                  <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row ">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Project Name</label>
+                          <input type="text" name="name" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <!-- <div class="form-group"> -->
+                            <label class="btn btn-primary btn-round pull-right" for="inputcsv">
+                              <input type="file" name="upload"  id="inputcsv" accept=".csv" style="display: none;">Choose file</label>
+                        </input>
+                        <!-- </div> -->
+                      </div>
+                    </div>
+                    <button type="submit" name="done" class="btn btn-primary pull-left">Update Profile</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

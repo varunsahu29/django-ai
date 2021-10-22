@@ -1,0 +1,49 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Tables {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+        <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Select Columns</h4>
+                  <p class="card-category"> Here are the Columns name which you want to make X axis</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          columns
+                        </th>
+                      </thead>
+                      <tbody>
+                          {%for header in headers%}
+                        <tr>
+                            <td>
+                                {{header}}
+                                <form method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="text" name="__" value="{{file_name}}" style="display: none;">
+                                    <button type="submit" name="{{header}}" class="btn btn-primary pull-right">Generate Result</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {%endfor%}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

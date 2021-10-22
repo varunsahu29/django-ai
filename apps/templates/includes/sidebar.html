@@ -1,0 +1,37 @@
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
+      <div class="logo">
+        Django AI Application
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+        {% if request.user.is_authenticated %}
+
+          <li class="nav-item {% if 'cvInput' in segment %} active {% endif %}">
+            <a class="nav-link" href="/cvInput.html">
+              <i class="material-icons">dashboard</i>
+              <p>cvInput</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'cvResults' in segment %} active {% endif %}">
+            <a class="nav-link" href="/cvResults.html">
+              <i class="material-icons">library_books</i>
+              <p>cvResults</p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'cvRunModel' in segment %} active {% endif %}">
+            <a class="nav-link" href="/cvRunModel.html">
+              <i class="material-icons">bubble_chart</i>
+              <p>cvRunModel</p>
+            </a>
+          </li>
+         
+
+        {% else %}
+
+               
+
+        {% endif %}
+        </ul>
+      </div>
+
+    </div>

@@ -1,0 +1,40 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Typography {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+        <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">Django AI Application</h4>
+              <p class="card-category">OneNine AI Intern Task</p>
+            </div>
+            <div class="card-body">
+                <div id="typography">
+                    <div class="card-title">
+                    <h2>NOTE</h2>
+                    </div>
+                    {% for note in notes %}
+                    <h3>
+                        <div class="row">
+                        <div class="tim-typo">
+                                <span class="tim-note">
+                                <span class="material-icons">grade</span>
+                                </span>{{note}}
+                            </span>
+                        </div>
+                        </div>
+                    </h3>
+                    {%endfor%}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
